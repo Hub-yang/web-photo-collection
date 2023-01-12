@@ -8,6 +8,10 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     BaseCursor: typeof import('./../components/baseCursor.vue')['default']
+    BaseFooter: typeof import('./../components/baseFooter.vue')['default']
+    BaseHeader: typeof import('./../components/baseHeader.vue')['default']
+    BaseNavBar: typeof import('./../components/baseNavBar.vue')['default']
+    BaseShare: typeof import('./../components/baseShare.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCol: typeof import('element-plus/es')['ElCol']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']

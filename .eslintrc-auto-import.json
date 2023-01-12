@@ -177,6 +177,7 @@
     "useIdle": true,
     "useImage": true,
     "useInfiniteScroll": true,
+    "useInit": true,
     "useIntersectionObserver": true,
     "useInterval": true,
     "useIntervalFn": true,

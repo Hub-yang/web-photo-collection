@@ -1,16 +1,8 @@
 <template>
-  <!--main-loader  -->
-  <div class="main-loader">
-    <div class="ml-wrap">
-      <div class="ml-mask"></div>
-      <img src="../../assets/images/logo.png" alt="" />
-    </div>
-  </div>
-  <!-- main-loader end -->
   <!-- main  -->
   <div id="main">
     <!--  logo -->
-    <a href="index.html" class="ajax logo-holder"><img src="../../assets/images/logo.png" alt="" /></a>
+    <a href="/" class="ajax logo-holder"><img src="../../assets/images/logo.png" alt="" /></a>
     <!--  logo end -->
     <!--  navigation -->
     <div class="nav-holder main-menu">
@@ -328,7 +320,7 @@
 </template>
 
 <script setup>
-import '../../assets/js/scripts'
+useInit()
 
 const testUrl = new URL('../../assets/images/2.jpg', import.meta.url).href
 </script>

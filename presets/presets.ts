@@ -30,7 +30,7 @@ export default () => {
       // 指定配置文件生成的位置与文件名
       dts: './src/automatic/auto-imports.d.ts',
       // 指定引入utils目录下所有文件
-      dirs: ['./src/utils/**'],
+      dirs: ['./src/utils/**', './src/hooks/**'],
       resolvers: [ElementPlusResolver()],
       // 配置开启eslint
       eslintrc: {
