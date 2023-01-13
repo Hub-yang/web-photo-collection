@@ -6,7 +6,7 @@ const routes: Array<RouteRecordRaw> = [
     path: '/',
     name: 'index',
     meta: {
-      title: 'Endor摄影-创意响应摄影作品集',
+      title: 'Mocheng.shuai-我的摄影作品集',
       isHomePage: true,
     },
     component: () => import('@/views/index/index.vue'),

@@ -1,17 +1,19 @@
+import { getLoaderState, setLoaderState } from '@/utils/useRunLoader'
 export const useInit = () => {
   const route = useRoute()
   const isHomePage = route.meta.isHomePage
+  const isFirstLoad = !getLoaderState()
 
   onMounted(() => {
     function initEndor() {
       // preload------------------
 
       // 判断是否为首页
-      // if (isHomePage) {
-      //   firstLoad()
-      // } else {
-      pageLoad()
-      // }
+      if (isHomePage && isFirstLoad) {
+        firstLoad()
+      } else {
+        pageLoad()
+      }
 
       function pageLoad() {
         TweenMax.to('.ml-mask', 0.3, {
@@ -26,6 +28,7 @@ export const useInit = () => {
           },
         })
       }
+
       function firstLoad() {
         TweenMax.to('.ml-mask', 1.7, {
           xPercent: 100,
@@ -492,6 +495,10 @@ export const useInit = () => {
           necon = $('.footer-bg_polcy'),
           newElem2 = $('.sc-links_clone').clone(),
           necon2 = $('.footer-bg_social_links')
+
+        if (newElem2.length > 1) {
+          newElem2.children().remove()
+        }
         newElem.appendTo(necon)
         newElem2.appendTo(necon2)
       } else {

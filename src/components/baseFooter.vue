@@ -62,6 +62,7 @@ watch(
       resize()
       window.onresize = resize
     } else {
+      window.onresize = () => {}
       isHide.value = true
       normalSize.value = '20'
     }
