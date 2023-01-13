@@ -6,22 +6,22 @@
   <div class="nav-holder main-menu">
     <nav>
       <ul>
-        <li>
+        <!-- <li>
           <a href="" class="ajax">Works</a>
-        </li>
+        </li> -->
         <li>
-          <router-link to="/about">
-            <span class="ajax">About</span>
+          <router-link to="/about" replace>
+            <span class="ajax">关于我</span>
           </router-link>
         </li>
-        <li>
-          <router-link to="/blog">
-            <span class="ajax">News</span>
+        <!-- <li>
+          <router-link to="/blog" replace>
+            <span class="ajax">消息</span>
           </router-link>
-        </li>
+        </li> -->
         <li>
-          <router-link to="/contacts">
-            <span class="ajax">Contacts</span>
+          <router-link to="/contacts" replace>
+            <span class="ajax">联系</span>
           </router-link>
         </li>
       </ul>
