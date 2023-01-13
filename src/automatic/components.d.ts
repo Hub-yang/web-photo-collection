@@ -7,6 +7,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    BaseBackTop: typeof import('./../components/baseBackTop.vue')['default']
     BaseCursor: typeof import('./../components/baseCursor.vue')['default']
     BaseFooter: typeof import('./../components/baseFooter.vue')['default']
     BaseHeader: typeof import('./../components/baseHeader.vue')['default']
@@ -18,7 +19,9 @@ declare module '@vue/runtime-core' {
     ElIcon: typeof import('element-plus/es')['ElIcon']
     ElResult: typeof import('element-plus/es')['ElResult']
     ElRow: typeof import('element-plus/es')['ElRow']
+    Icons: typeof import('./../components/icons/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Wechat: typeof import('../components/icons/svg/wechat.svg')['default']
   }
 }

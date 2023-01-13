@@ -15,10 +15,14 @@
           </router-link>
         </li>
         <li>
-          <a href="blog.html" class="ajax">News</a>
+          <router-link to="/blog">
+            <span class="ajax">News</span>
+          </router-link>
         </li>
         <li>
-          <a href="contacts.html" class="ajax">Contacts</a>
+          <router-link to="/contacts">
+            <span class="ajax">Contacts</span>
+          </router-link>
         </li>
       </ul>
     </nav>
@@ -28,7 +32,7 @@
   </div>
   <!-- 导航栏结束 -->
   <!--  分享 -->
-  <div class="share">Share</div>
+  <div class="share">分 享</div>
   <div class="share-wrapper1">
     <div class="share-container isShare">
       <div class="share-icon share-icon-facebook"></div>

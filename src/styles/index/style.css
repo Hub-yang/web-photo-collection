@@ -1104,11 +1104,11 @@ blockquote p {
 
 .filt-title {
 	position: absolute;
-	left: -2px;
+	left: 6px;
 	bottom: -15px;
 	opacity: 0;
 	font-size: 10px;
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 	margin-top: 6px;
 	transition: all 0.3s linear;
 	transition-delay: 0.2s
@@ -2725,11 +2725,11 @@ blockquote p {
 		text-transform: inherit;
 		font-size: 12px;
 		font-weight: 600;
-		margin: 8px 0 0 20px;
+		margin: 10px 0 0 10px;
 	}
 
 	.filter-btn:hover .filt-title {
-		margin: 8px 0 0 20px;
+		margin: 10px 0 0 10px;
 	}
 
 	.gallery-items {

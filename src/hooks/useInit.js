@@ -7,11 +7,11 @@ export const useInit = () => {
       // preload------------------
 
       // 判断是否为首页
-      if (isHomePage) {
-        firstLoad()
-      } else {
-        pageLoad()
-      }
+      // if (isHomePage) {
+      //   firstLoad()
+      // } else {
+      pageLoad()
+      // }
 
       function pageLoad() {
         TweenMax.to('.ml-mask', 0.3, {

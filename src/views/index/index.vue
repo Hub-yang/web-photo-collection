@@ -1,14 +1,13 @@
 <template>
   <!-- 首页加载动画  -->
-  <div class="main-loader">
+  <!-- <div class="main-loader">
     <div class="ml-wrap">
       <div class="ml-mask"></div>
       <img src="../../assets/images/logo.png" alt="" />
     </div>
-  </div>
+  </div> -->
   <!-- 首页加载动画结束 -->
   <div id="main">
-    <base-header></base-header>
     <!-- 筛选 -->
     <div id="wrapper">
       <div class="content-holder hide_footer2">
@@ -30,6 +29,7 @@
           </div>
           <div class="gallery-filters-overlay"></div>
         </div>
+        <!-- 主界面列表 -->
         <div class="hero-showcase-wrap">
           <div class="hero-showcase">
             <div class="gallery-items sf_true">
@@ -48,15 +48,13 @@
             </div>
           </div>
         </div>
+        <!-- 主界面列表结束 -->
         <!-- 返回顶部 -->
-        <div class="mob-footer_gal mfg-2 fl-wrap">
-          <div class="to-top-btn"><i class="fal fa-angle-up"></i></div>
-        </div>
+        <base-back-top></base-back-top>
         <!-- 返回顶部结束 -->
       </div>
     </div>
     <!-- 筛选结束 -->
-    <base-footer></base-footer>
   </div>
 </template>
 <script setup>
@@ -170,6 +168,12 @@ const imgList = ref([
     url: new URL('../../assets/images/my1.jpg', import.meta.url).href,
     title: 'Beautiful.',
     catName: '户外|自然',
+  },
+  {
+    class: 'nature',
+    url: new URL('../../assets/images/my2.jpg', import.meta.url).href,
+    title: 'Beautiful.',
+    catName: '自然',
   },
 ])
 </script>

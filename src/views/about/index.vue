@@ -1,36 +1,6 @@
 <template>
   <!-- main  -->
   <div id="main">
-    <!--  logo -->
-    <a href="/" class="ajax logo-holder"><img src="../../assets/images/logo.png" alt="" /></a>
-    <!--  logo end -->
-    <!--  navigation -->
-    <div class="nav-holder main-menu">
-      <nav>
-        <ul>
-          <li>
-            <a href="index.html" class="ajax">Works</a>
-          </li>
-          <li>
-            <a href="" class="ajax">About</a>
-          </li>
-          <li>
-            <a href="blog.html" class="ajax">News</a>
-          </li>
-          <li>
-            <a href="contacts.html" class="ajax">Contacts</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-    <!-- navigation  end -->
-    <!--  share btn -->
-    <div class="share-btn">Share</div>
-    <!--  share btn end -->
-    <div class="nav-button-wrap">
-      <div class="nav-button"><span></span><span></span><span></span></div>
-    </div>
-    <!--  navigation -->
     <!-- wrapper-->
     <div id="wrapper">
       <!-- content-holder-->
@@ -260,11 +230,6 @@
           <div class="footer-bg_social_links"></div>
           <div class="to-top-btn"><i class="fal fa-angle-up"></i></div>
         </div>
-        <!-- share-wrapper-->
-        <div class="share-wrapper">
-          <div class="share-container isShare"></div>
-        </div>
-        <!-- share-wrapper  end -->
         <div class="progress-bar-wrap">
           <div class="progress-bar color-bg"></div>
           <div class="mousey">
@@ -292,29 +257,6 @@
       <!-- content-holder end-->
     </div>
     <!-- wrapper end-->
-    <!-- social_links-->
-    <div class="social_links">
-      <div class="sc-links_clone">
-        <span>Follow:</span>
-        <ul>
-          <li><a href="#" target="_blank">Fb</a></li>
-          <li><a href="#" target="_blank">Ins</a></li>
-          <li><a href="#" target="_blank">Tw</a></li>
-          <li><a href="#" target="_blank">Vk</a></li>
-        </ul>
-      </div>
-    </div>
-    <!-- social_links end-->
-    <!-- policy-box-->
-    <div class="policy-box">
-      <span>&#169; Endor 2021 - All rights reserved. </span>
-    </div>
-    <!-- policy-box end-->
-    <!-- cursor-->
-    <div class="element">
-      <div class="element-item"></div>
-    </div>
-    <!-- cursor end-->
   </div>
   <!-- Main end -->
 </template>
