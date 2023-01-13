@@ -33,13 +33,15 @@
         <div class="hero-showcase-wrap">
           <div class="hero-showcase">
             <div class="gallery-items sf_true">
-              <div class="gallery-items-container fl-wrap">
-                <div v-for="(item, index) in imgList" :key="index" :class="['gallery-item', item.class]">
+              <div class="gallery-items-container fl-wrap lightgallery">
+                <div v-for="(item, index) in imgList" :key="index" :class="['gallery-item hov_zoom', item.class]">
                   <div class="hov_box">
                     <img :src="item.url" alt="" />
+                    <a :href="item.url" class="box-media-zoom popup-image"><i class="fal fa-search"></i></a>
                     <div class="overlay"></div>
                     <div class="hov_box-title">
-                      <a href="portfolio-single.html" class="ajax">{{ item.title }}</a>
+                      <!-- <a href="portfolio-single.html" class="ajax">{{ item.title }}</a> -->
+                      <a href="javascript:;" class="ajax">{{ item.title }}</a>
                       <div class="cat_item">{{ item.catName }}</div>
                     </div>
                   </div>

@@ -1,44 +1,6 @@
 <template>
-  <!--main-loader  -->
-  <div class="main-loader">
-    <div class="ml-wrap">
-      <div class="ml-mask"></div>
-      <img src="../../assets/images/logo.png" alt="" />
-    </div>
-  </div>
-  <!-- main-loader end -->
   <!-- main  -->
   <div id="main">
-    <!--  logo -->
-    <a href="index.html" class="ajax logo-holder"><img src="../../assets/images/logo.png" alt="" /></a>
-    <!--  logo end -->
-    <!--  navigation -->
-    <div class="nav-holder main-menu">
-      <nav>
-        <ul>
-          <li>
-            <a href="index.html" class="ajax">Works</a>
-          </li>
-          <li>
-            <a href="about.html" class="ajax">About</a>
-          </li>
-          <li>
-            <a href="blog.html" class="ajax">News</a>
-          </li>
-          <li>
-            <a href="contacts.html" class="ajax">Contacts</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-    <!-- navigation  end -->
-    <!--  share btn -->
-    <div class="share-btn">Share</div>
-    <!--  share btn end -->
-    <div class="nav-button-wrap">
-      <div class="nav-button"><span></span><span></span><span></span></div>
-    </div>
-    <!--  navigation -->
     <!-- wrapper-->
     <div id="wrapper">
       <!-- content-holder-->
@@ -90,23 +52,17 @@
                       <div class="swiper-container">
                         <div class="swiper-wrapper lightgallery">
                           <div class="swiper-slide hov_zoom">
-                            <img src="../../assets/images/61.jpg" alt="" /><a
-                              href="static/picture/61.jpg"
-                              class="box-media-zoom popup-image"
+                            <img :src="testUrl4" alt="" /><a :href="testUrl4" class="box-media-zoom popup-image"
                               ><i class="fal fa-search"></i
                             ></a>
                           </div>
                           <div class="swiper-slide hov_zoom">
-                            <img src="../../assets/images/91.jpg" alt="" /><a
-                              href="static/picture/91.jpg"
-                              class="box-media-zoom popup-image"
+                            <img :src="testUrl5" alt="" /><a :href="testUrl5" class="box-media-zoom popup-image"
                               ><i class="fal fa-search"></i
                             ></a>
                           </div>
                           <div class="swiper-slide hov_zoom">
-                            <img src="../../assets/images/7.jpg" alt="" /><a
-                              href="static/picture/7.jpg"
-                              class="box-media-zoom popup-image"
+                            <img :src="testUrl6" alt="" /><a :href="testUrl6" class="box-media-zoom popup-image"
                               ><i class="fal fa-search"></i
                             ></a>
                           </div>
@@ -315,11 +271,6 @@
           <div class="footer-bg_social_links"></div>
           <div class="to-top-btn"><i class="fal fa-angle-up"></i></div>
         </div>
-        <!-- share-wrapper-->
-        <div class="share-wrapper">
-          <div class="share-container isShare"></div>
-        </div>
-        <!-- share-wrapper  end -->
         <div class="progress-bar-wrap">
           <div class="progress-bar color-bg"></div>
           <div class="mousey">
@@ -330,35 +281,16 @@
       <!-- content-holder end-->
     </div>
     <!-- wrapper end-->
-    <!-- social_links-->
-    <div class="social_links">
-      <div class="sc-links_clone">
-        <span>Follow:</span>
-        <ul>
-          <li><a href="#" target="_blank">Fb</a></li>
-          <li><a href="#" target="_blank">Ins</a></li>
-          <li><a href="#" target="_blank">Tw</a></li>
-          <li><a href="#" target="_blank">Vk</a></li>
-        </ul>
-      </div>
-    </div>
-    <!-- social_links end-->
-    <!-- policy-box-->
-    <div class="policy-box">
-      <span>&#169; Endor 2021 - All rights reserved. </span>
-    </div>
-    <!-- policy-box end-->
-    <!-- cursor-->
-    <div class="element">
-      <div class="element-item"></div>
-    </div>
-    <!-- cursor end-->
   </div>
   <!-- Main end -->
 </template>
 
 <script setup>
-import '../../assets/js/scripts'
+useInit()
+
+const testUrl4 = new URL('../../assets/images/61.jpg', import.meta.url).href
+const testUrl5 = new URL('../../assets/images/91.jpg', import.meta.url).href
+const testUrl6 = new URL('../../assets/images/7.jpg', import.meta.url).href
 
 const testUrl1 = new URL('../../assets/images/2.jpg', import.meta.url).href
 const testUrl2 = new URL('../../assets/images/5.jpg', import.meta.url).href
