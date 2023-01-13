@@ -41,14 +41,10 @@
 </template>
 
 <script setup>
-const route = useRoute()
+const router = useRouter()
 const isHide = ref(false)
 const isHomePage = ref(false)
 const normalSize = ref('20')
-onBeforeMount(() => {
-  resize()
-  window.onresize = resize
-})
 
 const resize = () => {
   if (window.innerWidth >= 1066) {
@@ -61,14 +57,18 @@ const resize = () => {
 }
 
 watch(
-  () => route.meta.isHomePage,
+  () => router.currentRoute.value.path,
   (newVal) => {
-    if (newVal && !isHide.value) isHomePage.value = true
-    else {
+    if (newVal === '/' && !isHide.value) {
+      isHomePage.value = true
+      resize()
+      window.onresize = resize
+    } else {
       isHomePage.value = false
       normalSize.value = '20'
     }
   },
+  { immediate: true },
 )
 </script>
 
