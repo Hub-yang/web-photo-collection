@@ -1,11 +1,11 @@
 <template>
   <!-- 首页加载动画  -->
-  <!-- <div class="main-loader">
+  <div class="main-loader" v-if="!getLoaderState()">
     <div class="ml-wrap">
       <div class="ml-mask"></div>
       <img src="../../assets/images/logo.png" alt="" />
     </div>
-  </div> -->
+  </div>
   <!-- 首页加载动画结束 -->
   <div id="main">
     <!-- 筛选 -->
@@ -60,7 +60,22 @@
   </div>
 </template>
 <script setup>
+import { getLoaderState, setLoaderState } from '@/utils/useRunLoader'
 useInit()
+
+// 控制加载动画只显示一次
+let timer = null
+onMounted(() => {
+  timer = setTimeout(() => {
+    setLoaderState(JSON.stringify(true))
+  }, 2000)
+})
+
+onBeforeUnmount(() => {
+  clearTimeout(timer)
+})
+
+// 控制加载动画只显示一次结束
 // 图片列表数据
 const imgList = ref([
   // {

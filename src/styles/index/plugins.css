@@ -11333,7 +11333,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 }
 
 .lg-outer .lg-item {
-  background: url("../../assets/image/loading.gif") no-repeat scroll center center transparent;
+  background: url("../../assets//images/loading.gif") no-repeat scroll center center transparent;
   display: none !important
 }
 
