@@ -1,6 +1,6 @@
 <template>
   <!--  页脚链接 -->
-  <div :class="[!isHomePage ? 'social_links' : 'index_container']">
+  <div :class="[isHide ? 'social_links' : 'index_container']">
     <div class="sc-links_clone">
       <span>导航</span>
       <ul>
@@ -30,7 +30,7 @@
   <!--  页脚链接结束 -->
   <!--  页脚版权 -->
   <div class="policy-box">
-    <span>&#169; Endor 2023 - 版权所有 </span>
+    <span>&#169; Mocheng.shuai 2023 - 版权所有 </span>
   </div>
   <!--  页脚版权结束 -->
   <!-- 指针 -->
@@ -43,7 +43,6 @@
 <script setup>
 const router = useRouter()
 const isHide = ref(false)
-const isHomePage = ref(false)
 const normalSize = ref('20')
 
 const resize = () => {
@@ -59,12 +58,11 @@ const resize = () => {
 watch(
   () => router.currentRoute.value.path,
   (newVal) => {
-    if (newVal === '/' && !isHide.value) {
-      isHomePage.value = true
+    if (newVal === '/') {
       resize()
       window.onresize = resize
     } else {
-      isHomePage.value = false
+      isHide.value = true
       normalSize.value = '20'
     }
   },
