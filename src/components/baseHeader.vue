@@ -35,13 +35,11 @@
   <div class="share">分 享</div>
   <div class="share-wrapper1">
     <div class="share-container isShare">
-      <div class="share-icon"><RiBilibiliFill></RiBilibiliFill></div>
-      <div class="share-icon"></div>
-      <div class="share-icon"></div>
-      <div class="share-icon">888</div>
+      <div class="share-icon"><icons-friendscircle></icons-friendscircle></div>
+      <div class="share-icon"><icons-wechat></icons-wechat></div>
+      <div class="share-icon"><icons-sina></icons-sina></div>
+      <div class="share-icon"><icons-link></icons-link></div>
     </div>
   </div>
   <!--  分享结束 -->
 </template>
-
-<style scope lang="scss"></style>
