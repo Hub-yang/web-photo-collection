@@ -40,7 +40,6 @@
                     <a :href="item.url" class="box-media-zoom popup-image"><i class="fal fa-search"></i></a>
                     <div class="overlay"></div>
                     <div class="hov_box-title">
-                      <!-- <a href="portfolio-single.html" class="ajax">{{ item.title }}</a> -->
                       <a href="javascript:;" class="ajax">{{ item.title }}</a>
                       <div class="cat_item">{{ item.catName }}</div>
                     </div>

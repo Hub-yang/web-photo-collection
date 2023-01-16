@@ -16,7 +16,7 @@
               <div class="hero-sec_anim"></div>
             </div>
             <div class="hero-section_title fl-wrap" id="sec1">
-              <h2>About Page</h2>
+              <h2>关 于 我</h2>
             </div>
           </div>
           <!-- hero-section end -->
@@ -264,7 +264,8 @@
 <script setup>
 useInit()
 
-const testUrl = new URL('../../assets/images/2.jpg', import.meta.url).href
+// const testUrl = new URL('../../assets/images/2.jpg', import.meta.url).href
+const testUrl = new URL('../../assets/images/bg.jpeg', import.meta.url).href
 </script>
 
 <style scoped lang="scss"></style>

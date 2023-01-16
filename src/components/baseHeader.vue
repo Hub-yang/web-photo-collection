@@ -21,7 +21,7 @@
         </li> -->
         <li>
           <router-link to="/contacts" replace>
-            <span class="ajax">联系</span>
+            <span class="ajax">联系我</span>
           </router-link>
         </li>
       </ul>
@@ -35,13 +35,13 @@
   <div class="share">分 享</div>
   <div class="share-wrapper1">
     <div class="share-container isShare">
-      <div class="share-icon share-icon-facebook"></div>
-      <div class="share-icon share-icon-twitter"></div>
-      <div class="share-icon share-icon-tumblr"></div>
-      <div class="share-icon share-icon-pinterest"></div>
+      <div class="share-icon"><RiBilibiliFill></RiBilibiliFill></div>
+      <div class="share-icon"></div>
+      <div class="share-icon"></div>
+      <div class="share-icon">888</div>
     </div>
   </div>
   <!--  分享结束 -->
 </template>
 
-<script setup></script>
+<style scope lang="scss"></style>

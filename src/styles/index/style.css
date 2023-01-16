@@ -2632,14 +2632,17 @@ blockquote p {
 .share-icon {
 	width: 60px;
 	height: 60px;
-	line-height: 60px;
+	/* line-height: 60px; */
 	margin: 1px;
 	float: left;
 	position: relative;
-	font-size: 12px;
+	/* font-size: 12px; */
 	color: #fff;
 	background: #333;
 	opacity: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .share-icon:before {

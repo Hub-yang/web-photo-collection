@@ -20,6 +20,8 @@ declare module '@vue/runtime-core' {
     ElResult: typeof import('element-plus/es')['ElResult']
     ElRow: typeof import('element-plus/es')['ElRow']
     Icons: typeof import('./../components/icons/index.vue')['default']
+    MaterialSymbols17mp: typeof import('./../components/MaterialSymbols17mp.vue')['default']
+    RiBilibiliFill: typeof import('./../components/icons/svg/RiBilibiliFill.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Wechat: typeof import('../components/icons/svg/wechat.svg')['default']
