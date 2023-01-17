@@ -17,6 +17,7 @@
             </div>
             <div class="hero-section_title fl-wrap" id="sec1">
               <h2>关 于 我</h2>
+              <h5>2023,1,16</h5>
             </div>
           </div>
           <!-- hero-section end -->
@@ -25,44 +26,42 @@
           <div class="container small-container">
             <div class="fl-wrap content-item sec-anim">
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-7">
                   <div class="column-wrapper_text fl-wrap">
-                    <h4>
-                      We cover a large range of creative digital projects, platforms, and campaigns to create
-                      experiences.
-                    </h4>
+                    <h4>MoCheng.shuai&nbsp;&nbsp;&nbsp;我的个人摄影作品展示集</h4>
                     <p>
-                      Praesent nec leo venenatis elit semper aliquet id ac enim. Maecenas nec mi leo. Etiam venenatis ut
-                      dui non hendrerit. Integer dictum, diam vitae blandit accumsan, dolor odio tempus arcu .
+                      嗨，大家好吗，<br />
+                      如你所见，我是一名前端开发程序员，你正在浏览的是我个人网站集合的其中之一，我计划将它完善为一个个人拍摄作品展示集，这只是一个开始。
                     </p>
                     <p>
-                      Cras mattis iudicium purus sit amet fermentum at nos hinc posthac, sitientis piros afros. Lorem
-                      ipsum dolor sit amet, consectetur adipisici elit, petierunt uti sibi concilium totius Galliae in
-                      diem sed eius mod tempor incidunt ut labore et dolore magna aliqua.
+                      最初版本将仅仅作为我的主站页面之一展示我的个人作品，在未来的版本中，我将逐步为其添加新功能，或将其上线为一个可用的集上传、分享、交流等功能的个人摄影展示站点。
+                      逐步开发正在进行中...
                     </p>
+                    <br />
+                    <h4>如你感兴趣，可以通过如下方式联系我或关注我的平台</h4>
                     <div class="inline-facts-holder fl-wrap">
                       <!-- inline-facts -->
                       <div class="inline-facts">
-                        <div class="num">15</div>
-                        <h6>Years of Experience</h6>
+                        <div class="num">@邮箱</div>
+                        <h6>18830279823@163.com</h6>
                       </div>
                       <!-- inline-facts end -->
                       <!-- inline-facts  -->
                       <div class="inline-facts">
-                        <div class="num">24</div>
-                        <h6>Awards win</h6>
+                        <div class="num">@手机</div>
+                        <h6>15932130680</h6>
                       </div>
                       <!-- inline-facts end -->
                       <!-- inline-facts  -->
                       <div class="inline-facts">
-                        <div class="num">13k</div>
-                        <h6>Awesome Photos</h6>
+                        <div class="num">github</div>
+                        <h6>https://github.com/Mochenghualei</h6>
                       </div>
                       <!-- inline-facts end -->
                     </div>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-5">
                   <div class="image-collage-wrap fl-wrap">
                     <div class="image-collage-wrap">
                       <div class="image-collage-wrap_container">
@@ -77,54 +76,19 @@
             <!-- section -->
             <div class="section fl-wrap sec-anim" id="sec2">
               <div class="section-title">
-                <h3>Services That I Provide</h3>
+                <h3>我的其他站点</h3>
               </div>
               <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4" v-for="(item, index) in webCardsList" :key="index">
                   <div class="column-wrapper_text services-item fl-wrap">
-                    <span class="serv-number">01.</span>
-                    <i class="fal fa-film-canister"></i>
-                    <h4>Commercial Photography</h4>
-                    <p>
-                      Praesent nec leo venenatis elit semper aliquet id ac enim. Maecenas nec mi leo. Etiam venenatis ut
-                      dui non hendrerit. Integer dictum, diam vitae blandit accumsan, dolor odio tempus arcu .
-                    </p>
+                    <span class="serv-number">{{ `0${index + 1}.` }}</span>
+                    <i class="fal">
+                      <icons-i-e width="70" height="70"></icons-i-e>
+                    </i>
+                    <h4>{{ item.title }}</h4>
+                    <p>{{ item.content }}</p>
                     <ul class="serv-list">
-                      <li>Portraits</li>
-                      <li>Weddings</li>
-                      <li>Commercials</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="column-wrapper_text services-item fl-wrap">
-                    <span class="serv-number">02.</span>
-                    <i class="fal fa-camera-movie"></i>
-                    <h4>Video Production</h4>
-                    <p>
-                      Praesent nec leo venenatis elit semper aliquet id ac enim. Maecenas nec mi leo. Etiam venenatis ut
-                      dui non hendrerit. Integer dictum, diam vitae blandit accumsan, dolor odio tempus arcu .
-                    </p>
-                    <ul class="serv-list">
-                      <li>Montage</li>
-                      <li>Slow motion</li>
-                      <li>Filming</li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="column-wrapper_text services-item fl-wrap">
-                    <span class="serv-number">03.</span>
-                    <i class="fal fa-rings-wedding"></i>
-                    <h4>Wedding Photography</h4>
-                    <p>
-                      Praesent nec leo venenatis elit semper aliquet id ac enim. Maecenas nec mi leo. Etiam venenatis ut
-                      dui non hendrerit. Integer dictum, diam vitae blandit accumsan, dolor odio tempus arcu .
-                    </p>
-                    <ul class="serv-list">
-                      <li>Commercials</li>
-                      <li>Weddings</li>
-                      <li>Portraits</li>
+                      <a href="javascript:;">点击进入</a>
                     </ul>
                   </div>
                 </div>
@@ -134,66 +98,23 @@
             <!-- section -->
             <div class="section fl-wrap sec-anim" id="sec3">
               <div class="section-title">
-                <h3>Awesome Clients</h3>
+                <h3>反馈 & 建议</h3>
               </div>
               <div class="testilider fl-wrap">
                 <div class="swiper-container">
                   <div class="swiper-wrapper">
                     <!-- swiper-slide -->
-                    <div class="swiper-slide">
+                    <div class="swiper-slide" v-for="(item, index) in feedbackList" :key="index">
                       <div class="testi-item fl-wrap">
-                        <span class="testi-number">01.</span>
-                        <div class="testi-avatar"><img src="../../assets/images/1.jpg" alt="" /></div>
-                        <h3>Liza Mirovsky</h3>
+                        <span class="testi-number">{{ `0${index + 1}.` }}</span>
+                        <div class="testi-avatar">
+                          <icons-avatar width="150" height="150"></icons-avatar>
+                        </div>
+                        <h3>{{ item.username }}</h3>
                         <p>
-                          "All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary,
-                          making this the first true generator on the Internet. It uses a dictionary of over "
+                          {{ `"${item.content}"` }}
                         </p>
-                        <a href="#" class="teti-link" target="_blank">Via Twitter</a>
-                      </div>
-                    </div>
-                    <!-- swiper-slide end-->
-                    <!-- swiper-slide -->
-                    <div class="swiper-slide">
-                      <div class="testi-item fl-wrap">
-                        <span class="testi-number">02.</span>
-                        <div class="testi-avatar"><img src="../../assets/images/23.jpg" alt="" /></div>
-                        <h3>Andy Smith</h3>
-                        <p>
-                          "Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc. Mauris non ligula
-                          suscipit, vulputate mi accumsan, dapibus felis. Nullam sed sapien dui. Nulla auctor sit amet
-                          sem non porta. "
-                        </p>
-                        <a href="#" class="teti-link" target="_blank">Via Facebook</a>
-                      </div>
-                    </div>
-                    <!-- swiper-slide end-->
-                    <!-- swiper-slide -->
-                    <div class="swiper-slide">
-                      <div class="testi-item fl-wrap">
-                        <span class="testi-number">03.</span>
-                        <div class="testi-avatar"><img src="../../assets/images/3.jpg" alt="" /></div>
-                        <h3>Mery Trust</h3>
-                        <p>
-                          "All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary,
-                          making this the first true generator on the Internet. It uses a dictionary of over "
-                        </p>
-                        <a href="#" class="teti-link" target="_blank">Via Twitter</a>
-                      </div>
-                    </div>
-                    <!-- swiper-slide end-->
-                    <!-- swiper-slide -->
-                    <div class="swiper-slide">
-                      <div class="testi-item fl-wrap">
-                        <span class="testi-number">04.</span>
-                        <div class="testi-avatar"><img src="../../assets/images/4.jpg" alt="" /></div>
-                        <h3>Centa Simpson</h3>
-                        <p>
-                          "Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc. Mauris non ligula
-                          suscipit, vulputate mi accumsan, dapibus felis. Nullam sed sapien dui. Nulla auctor sit amet
-                          sem non porta. "
-                        </p>
-                        <a href="#" class="teti-link" target="_blank">Via Facebook</a>
+                        <a href="javascript:;" class="teti-link">github</a>
                       </div>
                     </div>
                     <!-- swiper-slide end-->
@@ -205,16 +126,16 @@
               <div class="fl-wrap client-list">
                 <ul>
                   <li>
-                    <a href="#" target="_blank"><img src="../../assets/images/1.png" alt="" /> </a>
+                    <a href="javascript:;"><img src="../../assets/images/1.png" alt="" /> </a>
                   </li>
                   <li>
-                    <a href="#" target="_blank"><img src="../../assets/images/2.png" alt="" /> </a>
+                    <a href="javascript:;"><img src="../../assets/images/2.png" alt="" /> </a>
                   </li>
                   <li>
-                    <a href="#" target="_blank"><img src="../../assets/images/3.png" alt="" /> </a>
+                    <a href="javascript:;"><img src="../../assets/images/3.png" alt="" /> </a>
                   </li>
                   <li>
-                    <a href="#" target="_blank"><img src="../../assets/images/4.png" alt="" /> </a>
+                    <a href="javascript:;"><img src="../../assets/images/4.png" alt="" /> </a>
                   </li>
                 </ul>
                 <!-- client-list end-->
@@ -241,13 +162,13 @@
           <nav class="scroll-init">
             <ul>
               <li>
-                <a class="scroll-link actscr-link" href="#sec1"><span>Story</span></a>
+                <a class="scroll-link actscr-link" href="#sec1"><span>简介</span></a>
               </li>
               <li>
-                <a class="scroll-link" href="#sec2"><span>Services</span></a>
+                <a class="scroll-link" href="#sec2"><span>跳转</span></a>
               </li>
               <li>
-                <a class="scroll-link" href="#sec3"><span>Clients</span></a>
+                <a class="scroll-link" href="#sec3"><span>反馈 & 建议</span></a>
               </li>
             </ul>
           </nav>
@@ -263,9 +184,22 @@
 
 <script setup>
 useInit()
-
-// const testUrl = new URL('../../assets/images/2.jpg', import.meta.url).href
 const testUrl = new URL('../../assets/images/bg.jpeg', import.meta.url).href
+
+// 我的其他站点
+const webCardsList = ref([
+  { title: '我的个人主页', content: '持续开发中...' },
+  { title: '个人健身管理平台', content: '持续开发中...' },
+  { title: '实用开发工具导航集合', content: '持续开发中...' },
+])
+
+// 反馈列表
+const feedbackList = ref([
+  { username: '用户名', content: '这里是反馈内容...' },
+  { username: '用户名', content: '这里是反馈内容...' },
+  { username: '用户名', content: '这里是反馈内容...' },
+  { username: '用户名', content: '这里是反馈内容...' },
+])
 </script>
 
 <style scoped lang="scss"></style>

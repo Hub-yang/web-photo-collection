@@ -58,16 +58,41 @@
     <!-- 筛选结束 -->
   </div>
 </template>
-<script setup>
+<script setup lang="ts">
+import { getImg } from '@/api/modules/index'
 import { getLoaderState, setLoaderState } from '@/utils/useRunLoader'
 useInit()
 
 // 控制加载动画只显示一次
-let timer = null
-onMounted(() => {
+let timer: any = null
+onBeforeMount(() => {
+  // 获取加载动画标识
   timer = setTimeout(() => {
     setLoaderState(JSON.stringify(true))
   }, 2000)
+  // 请求图片列表
+  getImg()
+    .then((res) => {
+      if (res && res.code === '200') {
+        console.log(res.data)
+        let resList: any[] = []
+        res.data.forEach((item: object | any) => {
+          let newData = {
+            class: item.class,
+            // 注意路径
+            url: new URL(`../../` + item.url, import.meta.url).href,
+            title: item.title,
+            catName: item.class,
+          }
+          resList.push(newData)
+        })
+        imgList.value = resList
+        console.log(imgList.value)
+      }
+    })
+    .catch((err) => {
+      throw new Error(`getImg()接口错误：${err}`)
+    })
 })
 
 onBeforeUnmount(() => {

@@ -3,13 +3,14 @@ import showCodeMessage from './code'
 import { ElMessage } from 'element-plus'
 import { formatJsonToUrlParams, instanceObject } from '@/utils/format'
 
-const baseURL = import.meta.env.VITE_APP_BASE_API || '/api'
+// const baseURL = import.meta.env.VITE_APP_BASE_API || '/api'
+const baseURL = 'http://localhost:3015/'
 // 创建实例
 const axiosInstance: AxiosInstance = axios.create({
   baseURL,
   timeout: 1000 * 30,
   headers: {
-    'Content-Type': 'application/json',
+    'Content-Type': 'multipart/form-data',
   },
 })
 

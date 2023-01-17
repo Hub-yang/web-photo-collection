@@ -6,9 +6,6 @@
   <div class="nav-holder main-menu">
     <nav>
       <ul>
-        <!-- <li>
-          <a href="" class="ajax">Works</a>
-        </li> -->
         <li>
           <router-link to="/about" replace>
             <span class="ajax">关于我</span>

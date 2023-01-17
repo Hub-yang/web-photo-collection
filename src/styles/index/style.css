@@ -521,15 +521,20 @@ blockquote p {
 	top: -60px;
 }
 
+#sec1.hero-section_title h5 {
+	position: relative;
+	top: -17px;
+}
+
 .hero-section_title h2:before {
 	content: '';
 	position: absolute;
 	left: 50%;
-	bottom: -60px;
-	width: 50px;
+	bottom: -29px;
+	width: 118px;
 	height: 2px;
 	background: #fff;
-	margin-left: -25px;
+	margin-left: -59px;
 }
 
 .section {
@@ -618,13 +623,14 @@ blockquote p {
 	border-top: 1px solid rgba(255, 255, 255, 0.1)
 }
 
-.serv-list li {
+.serv-list li, .serv-list a {
 	float: left;
 	text-align: left;
-	padding: 0 10px 0 0;
+	/* padding: 0 10px 0 0; */
 	color: #fff;
 	font-size: 10px;
 	text-transform: uppercase;
+	border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
 }
 
 .serv-number {
@@ -883,6 +889,9 @@ blockquote p {
 	top: 20px;
 	opacity: 1;
 	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .single-slider img {
@@ -910,12 +919,14 @@ blockquote p {
 
 .tc-pagination {
 	margin-top: 30px;
+	display: flex;
+	justify-content: center;
+	gap: 20px;
 }
 
 .tc-pagination .swiper-pagination-bullet {
 	background: none;
 	position: relative;
-	margin-right: 20px;
 	height: 6px;
 	opacity: 1;
 }
@@ -3166,4 +3177,13 @@ blockquote p {
 		-webkit-background-size: cover;
 		background-position: center;
 	}
+}
+
+
+
+
+/* 新增 */
+
+.image-collage-wrap_container {
+	overflow: hidden;
 }
