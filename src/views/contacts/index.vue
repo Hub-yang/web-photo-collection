@@ -76,10 +76,6 @@
                   </div>
                 </div>
               </div>
-              <div class="row">
-                <input type="file" multiple id="file" @change="handlerFileChange" />
-                <button @click="handlerUpload">提交</button>
-              </div>
             </div>
           </div>
           <!-- container end-->
@@ -113,62 +109,9 @@
 </template>
 
 <script setup>
-import { uploadimg } from '@/api/modules/index'
 
-let param = new FormData()
-const handlerFileChange = () => {
-  let file = document.getElementById('file').files[0]
-  param.append('file', file)
-  param.append('class', 'nature')
-  param.append('title', 'test')
-}
-
-const handlerUpload = () => {
-  // 暂时实现单张上传
-  // 调用上传接口
-  uploadimg(param)
-    .then((res) => {
-      // if (res && res.resCode === 0) {
-      //   data.field.imageUrl = res.data.files_path
-      // }
-      console.log(res)
-    })
-    .catch((err) => {
-      ElMessage.error(err)
-      throw new Error(`uploadFile()接口错误：${err}`)
-    })
-}
 useInit()
 </script>
 
 <style>
-.avatar-uploader {
-  z-index: 9999;
-  margin-bottom: 999px;
-}
-.avatar-uploader .avatar {
-  width: 178px;
-  height: 178px;
-  display: block;
-}
-.avatar-uploader .el-upload {
-  border: 1px dashed var(--el-border-color);
-  border-radius: 6px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: var(--el-transition-duration-fast);
-}
-
-.avatar-uploader .el-upload:hover {
-  border-color: var(--el-color-primary);
-}
-
-.el-icon.avatar-uploader-icon {
-  font-size: 28px;
-  color: #8c939d;
-  width: 178px;
-  height: 178px;
-  text-align: center;
-}
 </style>
