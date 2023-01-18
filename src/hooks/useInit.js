@@ -314,37 +314,6 @@ export const useInit = () => {
       })
     })
 
-    // 分享按钮交互相关
-    // Share   ------------------
-    var shrcn = $('.share-container'),
-      shic = $('.share-icon'),
-      ssbtn = $('.share')
-    function showShare() {
-      ssbtn.addClass('uncl-share')
-      shrcn.removeClass('isShare')
-      shic.each(function (a) {
-        var boi = $(this)
-        setTimeout(function () {
-          TweenMax.to(boi, 0.5, {
-            force3D: false,
-            opacity: '1',
-          })
-        }, 130 * a)
-      })
-    }
-    function hideShare() {
-      ssbtn.removeClass('uncl-share')
-      shrcn.addClass('isShare')
-      TweenMax.to($('.share-icon'), 1.0, {
-        force3D: false,
-        opacity: '0',
-      })
-    }
-    ssbtn.on('click', function () {
-      if ($('.share-container').hasClass('isShare')) showShare()
-      else hideShare()
-    })
-
     // 光标动画相关
     //   cursor ------------------
     $(

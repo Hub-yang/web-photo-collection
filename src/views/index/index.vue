@@ -52,10 +52,10 @@
         <div class="gallery-filters-wrap">
           <div class="gallery-filters">
             <a href="#" class="gallery-filter gallery-filter-active" data-filter="*"><span>01.</span>全部照片</a>
-            <a href="#" class="gallery-filter" data-filter=".风景"><span>02.</span>风景</a>
+            <a href="#" class="gallery-filter" data-filter=".景观"><span>02.</span>景观</a>
             <a href="#" class="gallery-filter" data-filter=".人像"><span>03.</span>人像</a>
             <a href="#" class="gallery-filter" data-filter=".随拍"><span>04.</span>随拍</a>
-            <a href="#" class="gallery-filter" data-filter=".户外"><span>05.</span>户外</a>
+            <a href="#" class="gallery-filter" data-filter=".人文"><span>05.</span>人文</a>
             <div class="count-folio">
               <div class="num-album"></div>
             </div>
@@ -154,11 +154,11 @@ const handlerUpload = (params) => {
   uploadimg(param)
     .then((res) => {
       if (res && res.code === 200) {
-        ElMessage({ message: res.msg, duration: 2000, type: 'success' })
+        ElMessage({ message: res.msg, duration: 3000, type: 'success' })
         form.imageUrl = res.imgurl
         form.file = params.file
       } else {
-        ElMessage({ message: res.msg, duration: 2000, type: 'error' })
+        ElMessage({ message: res.msg, duration: 3000, type: 'error' })
       }
     })
     .catch((err) => {
@@ -169,7 +169,7 @@ const handlerUpload = (params) => {
 
 const submitForm = () => {
   if (!(form.title && form.class)) {
-    ElMessage({ message: '请输入图片标题与分类', duration: 2000, type: 'info' })
+    ElMessage({ message: '请输入图片标题与分类', duration: 3000, type: 'info' })
     return false
   }
   // 参数
@@ -181,12 +181,12 @@ const submitForm = () => {
   submitimg(param)
     .then((res) => {
       if (res && res.code === 200) {
-        ElMessage({ message: res.msg, duration: 2000, type: 'success' })
+        ElMessage({ message: res.msg, duration: 3000, type: 'success' })
         // 刷新页面
-        timer = setTimeout(() => {
-          getImgList()
-          document.location.reload()
-        }, 2001)
+        // timer = setTimeout(() => {
+        //   getImgList()
+        //   document.location.reload()
+        // }, 2001)
         // 关闭弹窗
         visible.value = false
         // 重置表单
@@ -195,7 +195,7 @@ const submitForm = () => {
         form.class = ''
         form.file = null
       } else {
-        ElMessage({ message: res.msg, duration: 2000, type: 'error' })
+        ElMessage({ message: res.msg, duration: 3000, type: 'error' })
       }
     })
     .catch((err) => {
@@ -209,7 +209,7 @@ const handlerBeforeUpload = (file) => {
   // 判断上传文件类型与大小，返回boolean
   const isJPGOrPNG = file.type === ('image/jpeg' || 'image/png' || 'image/jpg')
   if (!isJPGOrPNG) {
-    ElMessage({ message: '请上传正确格式图片', duration: 2000, type: 'error' })
+    ElMessage({ message: '请上传正确格式图片', duration: 3000, type: 'error' })
     return false
   }
   return true

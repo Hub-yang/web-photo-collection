@@ -70,7 +70,7 @@
                           placeholder="意见 & 反馈"
                           class="cnt-anim"
                         ></textarea>
-                        <button class="cnt-anim" id="submit">提交</button>
+                        <button class="cnt-anim" id="submit" @click.prevent.stop="handlerSubmit">提交</button>
                       </fieldset>
                     </form>
                   </div>
@@ -110,6 +110,9 @@
 
 <script setup>
 useInit()
+const handlerSubmit = () => {
+  ElMessage({ message: '提交成功', duration: 3000, type: 'success' })
+}
 </script>
 
 <style></style>
