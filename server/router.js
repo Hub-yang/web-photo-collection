@@ -26,9 +26,9 @@ const storage = multer.diskStorage({
     db.query(sql, [file.originalname], (err, result) => {
       if (result.length != 0) {
         // 值存在
-        cb(null, '../public/repImgs')
-      } else {
         cb(null, '../public/uploadedImgs')
+      } else {
+        cb(null, '../public/repImgs')
       }
     })
   },

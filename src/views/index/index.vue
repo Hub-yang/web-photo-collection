@@ -115,6 +115,7 @@ const getImgList = () => {
           resList.push(newData)
         })
         imgList.value = resList
+        console.log(imgList.value)
       }
     })
     .catch((err) => {
@@ -296,10 +297,12 @@ const submitForm = () => {
     .then((res) => {
       if (res && res.code === 200) {
         ElMessage({ message: res.msg, duration: 2000, type: 'success' })
-        // 重新请求
-        getImgList()
         // 刷新页面
-
+        timer = setTimeout(() => {
+          document.location.reload()
+          // 重新请求
+          getImgList()
+        }, 2000)
         // 关闭弹窗
         visible.value = false
         // 重置表单
@@ -328,105 +331,3 @@ const handlerBeforeUpload = (file) => {
   return true
 }
 </script>
-
-<style lang="scss">
-.avatar-uploader {
-  width: 100%;
-  height: 200px;
-  margin: 0 !important;
-}
-.avatar-uploader .avatar {
-  width: 100%;
-  height: 200px;
-  display: block;
-  object-fit: cover;
-}
-
-.avatar-uploader .el-upload {
-  border: 1px dashed #d9d9d9;
-  border-radius: 6px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 30px;
-  transition: var(--el-transition-duration-fast);
-
-  &:hover {
-    border-color: var(--el-color-primary);
-  }
-}
-.upload_dialog.el-dialog {
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: #141414;
-  .el-dialog__header {
-    margin: 0 0 15px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    .el-dialog__title {
-      display: block;
-      text-align: left;
-      color: #fff;
-      font-size: 15px;
-    }
-    .el-dialog__headerbtn .el-dialog__close {
-      color: #fff;
-      &:hover {
-        color: var(--el-color-primary);
-      }
-    }
-  }
-  .el-dialog__body {
-    padding-top: 0;
-  }
-  .el-icon {
-    font-size: 1.5em;
-    font-weight: lighter;
-  }
-  .upload-form input {
-    margin-top: 15px;
-    border: none;
-    background: #222;
-    width: 100%;
-    padding: 15px 30px;
-    font-size: 12px;
-    color: #fff;
-    font-family: 'Poppins', sans-serif;
-    -webkit-appearance: none;
-
-    &::-webkit-input-placeholder {
-      color: #fff;
-      font-weight: bolder;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    &:focus {
-      background: #333;
-    }
-  }
-
-  .dialog-footer {
-    margin-top: 15px;
-    width: 100%;
-    overflow: hidden;
-    button {
-      float: left;
-      border: none;
-      width: 100px;
-      background: #222;
-      padding: 12px 30px;
-      font-size: 12px;
-      color: #fff;
-      font-family: 'Poppins', sans-serif;
-      -webkit-appearance: none;
-      transition: all ease 0.2s;
-      &:hover {
-        background: #333;
-      }
-    }
-  }
-}
-</style>
