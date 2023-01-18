@@ -28,12 +28,12 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="column-wrapper_text fl-wrap">
-                    <p>如您想进一步了解或希望反馈意见，请通过以下方式联系我或留下您的联系方式：</p>
+                    <h4>如您想进一步了解或希望反馈意见，请通过以下方式联系我或留下您的联系方式：</h4>
                     <div class="contact-details fl-wrap">
                       <ul>
-                        <li><span>@邮箱</span><a href="#" target="_blank">18830279823@163.com</a></li>
-                        <li><span>@地址</span><a href="#" target="_blank">北京市朝阳区某某街道</a></li>
-                        <li><span>@电话</span><a href="#">15932130680</a></li>
+                        <li><span>@邮箱</span><a href="javascript:;">18830279823@163.com</a></li>
+                        <li><span>@地址</span><a href="javascript:;">北京市XX区XX街道</a></li>
+                        <li><span>@电话</span><a href="javascript:;">15932130680</a></li>
                       </ul>
                     </div>
                   </div>
@@ -109,9 +109,7 @@
 </template>
 
 <script setup>
-
 useInit()
 </script>
 
-<style>
-</style>
+<style></style>

@@ -2,6 +2,11 @@
   <!--  logo -->
   <a href="/" class="ajax logo-holder"><img src="../assets/images/logo.png" alt="" /></a>
   <!--  logo结束 -->
+  <!-- 背景时间 -->
+  <div class="bg-clock">
+    <span>{{ curDate }}</span>
+    <span>{{ curClock }}</span>
+  </div>
   <!--  导航栏 -->
   <div class="nav-holder main-menu">
     <nav>
@@ -11,11 +16,6 @@
             <span class="ajax">关于我</span>
           </router-link>
         </li>
-        <!-- <li>
-          <router-link to="/blog" replace>
-            <span class="ajax">消息</span>
-          </router-link>
-        </li> -->
         <li>
           <router-link to="/contacts" replace>
             <span class="ajax">联系我</span>
@@ -40,3 +40,11 @@
   </div>
   <!--  分享结束 -->
 </template>
+
+<script setup>
+const { curDate, curClock } = useDate()
+</script>
+
+<style scoped lang="scss">
+
+</style>

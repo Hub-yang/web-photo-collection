@@ -52,10 +52,10 @@
         <div class="gallery-filters-wrap">
           <div class="gallery-filters">
             <a href="#" class="gallery-filter gallery-filter-active" data-filter="*"><span>01.</span>全部照片</a>
-            <a href="#" class="gallery-filter" data-filter=".nature"><span>02.</span>自然</a>
-            <a href="#" class="gallery-filter" data-filter=".models"><span>03.</span>模特</a>
-            <a href="#" class="gallery-filter" data-filter=".couples"><span>04.</span>景色</a>
-            <a href="#" class="gallery-filter" data-filter=".outdoor"><span>05.</span>户外</a>
+            <a href="#" class="gallery-filter" data-filter=".风景"><span>02.</span>风景</a>
+            <a href="#" class="gallery-filter" data-filter=".人像"><span>03.</span>人像</a>
+            <a href="#" class="gallery-filter" data-filter=".随拍"><span>04.</span>随拍</a>
+            <a href="#" class="gallery-filter" data-filter=".户外"><span>05.</span>户外</a>
             <div class="count-folio">
               <div class="num-album"></div>
             </div>
@@ -114,8 +114,8 @@ const getImgList = () => {
           }
           resList.push(newData)
         })
+
         imgList.value = resList
-        console.log(imgList.value)
       }
     })
     .catch((err) => {
@@ -123,12 +123,12 @@ const getImgList = () => {
     })
 }
 onBeforeMount(() => {
+  // 请求图片列表
+  getImgList()
   // 获取加载动画标识
   timer = setTimeout(() => {
     setLoaderState(JSON.stringify(true))
   }, 2000)
-  // 请求图片列表
-  getImgList()
 })
 
 onBeforeUnmount(() => {
@@ -136,122 +136,7 @@ onBeforeUnmount(() => {
 })
 
 // 图片列表数据
-const imgList = ref([
-  // {
-  //   class: 'nature',
-  //   url: new URL('../../assets/images/22.jpg', import.meta.url).href,
-  //   title: 'Alone on Nature.',
-  //   catName: '自然',
-  // },
-  {
-    class: 'models',
-    url: new URL('../../assets/images/24.jpg', import.meta.url).href,
-    title: 'Old Cars On Streets.',
-    catName: '模特',
-  },
-  {
-    class: 'couples',
-    url: new URL('../../assets/images/31.jpg', import.meta.url).href,
-    title: 'Living my Dream.',
-    catName: '景色',
-  },
-  {
-    class: 'models',
-    url: new URL('../../assets/images/41.jpg', import.meta.url).href,
-    title: 'Forever Young.',
-    catName: '模特',
-  },
-  {
-    class: 'couples',
-    url: new URL('../../assets/images/5.jpg', import.meta.url).href,
-    title: 'Sunny Side Up.',
-    catName: '景色',
-  },
-  {
-    class: 'outdoor couples',
-    url: new URL('../../assets/images/6.jpg', import.meta.url).href,
-    title: 'The Other Aide of Me.',
-    catName: '景色|户外',
-  },
-  {
-    class: 'nature outdoor',
-    url: new URL('../../assets/images/21.jpg', import.meta.url).href,
-    title: 'Discover Norway.',
-    catName: '自然|户外',
-  },
-  {
-    class: 'nature couples',
-    url: new URL('../../assets/images/13.jpg', import.meta.url).href,
-    title: 'A Wonderful Life.',
-    catName: '景色|户外',
-  },
-  {
-    class: 'outdoor',
-    url: new URL('../../assets/images/14.jpg', import.meta.url).href,
-    title: 'Happy Flashbacks.',
-    catName: '户外',
-  },
-  {
-    class: 'models outdoor',
-    url: new URL('../../assets/images/9.jpg', import.meta.url).href,
-    title: 'Go Green Morning.',
-    catName: '模特|户外',
-  },
-  {
-    class: 'couples',
-    url: new URL('../../assets/images/10.jpg', import.meta.url).href,
-    title: 'Travelling is Fun.',
-    catName: '景色',
-  },
-  {
-    class: 'models',
-    url: new URL('../../assets/images/8.jpg', import.meta.url).href,
-    title: 'Life, here I Come.',
-    catName: '模特',
-  },
-  {
-    class: 'nature',
-    url: new URL('../../assets/images/11.jpg', import.meta.url).href,
-    title: 'My Blooming Backyard.',
-    catName: '自然',
-  },
-  {
-    class: 'outdoor',
-    url: new URL('../../assets/images/12.jpg', import.meta.url).href,
-    title: 'Just Happy.',
-    catName: '户外',
-  },
-  {
-    class: 'models',
-    url: new URL('../../assets/images/16.jpg', import.meta.url).href,
-    title: 'Just Happy.',
-    catName: '模特',
-  },
-  {
-    class: 'nature',
-    url: new URL('../../assets/images/17.jpg', import.meta.url).href,
-    title: 'Just Happy.',
-    catName: '自然',
-  },
-  {
-    class: 'outdoor',
-    url: new URL('../../assets/images/18.jpg', import.meta.url).href,
-    title: 'Happy Flashbacks.',
-    catName: '户外',
-  },
-  {
-    class: 'outdoor nature',
-    url: new URL('../../assets/images/my1.jpg', import.meta.url).href,
-    title: 'Beautiful.',
-    catName: '户外|自然',
-  },
-  {
-    class: 'nature',
-    url: new URL('../../assets/images/my2.jpg', import.meta.url).href,
-    title: 'Beautiful.',
-    catName: '自然',
-  },
-])
+const imgList = ref(new Array(100).fill({}))
 
 const visible = ref(false)
 
@@ -299,10 +184,9 @@ const submitForm = () => {
         ElMessage({ message: res.msg, duration: 2000, type: 'success' })
         // 刷新页面
         timer = setTimeout(() => {
-          document.location.reload()
-          // 重新请求
           getImgList()
-        }, 2000)
+          document.location.reload()
+        }, 2001)
         // 关闭弹窗
         visible.value = false
         // 重置表单

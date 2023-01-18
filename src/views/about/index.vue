@@ -17,7 +17,6 @@
             </div>
             <div class="hero-section_title fl-wrap" id="sec1">
               <h2>关 于 我</h2>
-              <h5>2023,1,16</h5>
             </div>
           </div>
           <!-- hero-section end -->
@@ -30,7 +29,7 @@
                   <div class="column-wrapper_text fl-wrap">
                     <h4>MoCheng.shuai&nbsp;&nbsp;&nbsp;我的个人摄影作品展示集</h4>
                     <p>
-                      嗨，大家好吗，<br />
+                      嗨，你好，<br />
                       如你所见，我是一名前端开发程序员，你正在浏览的是我个人网站集合的其中之一，我计划将它完善为一个个人拍摄作品展示集，这只是一个开始。
                     </p>
                     <p>

@@ -240,7 +240,7 @@ blockquote p {
 
 .nav-holder {
   position: fixed;
-  top: 50px;
+  top: 40px;
   right: 50%;
   transform: translateX(50%);
   z-index: 20;
@@ -299,8 +299,14 @@ blockquote p {
   position: relative;
 }
 
-.nav-holder nav li a:hover {
-  color: #999;
+.nav-holder nav li a {
+  &:hover {
+    color: #999;
+  }
+
+  &:active {
+    color: #fff;
+  }
 }
 
 .nav-holder nav li ul a {
@@ -352,7 +358,7 @@ blockquote p {
 .share {
   position: fixed;
   top: 40px;
-  right: 60px;
+  right: 23px;
   z-index: 20;
   color: #fff;
   cursor: pointer;
@@ -416,7 +422,7 @@ blockquote p {
 /* ------header------------------------------------------------------------ */
 .logo-holder {
   position: fixed;
-  top: 15px;
+  top: 20px;
   left: 28px;
   z-index: 20;
 }
@@ -424,6 +430,11 @@ blockquote p {
 .logo-holder img {
   width: auto;
   height: 74px;
+  transition: background-color ease .3s;
+
+  &:hover {
+    background-color: #333333;
+  }
 }
 
 .social_links {
@@ -529,13 +540,14 @@ blockquote p {
   font-weight: 700;
   font-size: 104px;
   line-height: 90px;
-  color: #fff;
+  color: $base-text-color;
   text-transform: uppercase;
   position: relative;
   top: -60px;
 }
 
 #sec1.hero-section_title h5 {
+  color: $base-text-color;
   position: relative;
   top: -17px;
 }
@@ -544,10 +556,10 @@ blockquote p {
   content: '';
   position: absolute;
   left: 50%;
-  bottom: -29px;
+  bottom: -42px;
   width: 118px;
   height: 2px;
-  background: #fff;
+  background: $base-text-color;
   margin-left: -59px;
 }
 
@@ -568,14 +580,16 @@ blockquote p {
 
 .column-wrapper_text p {
   text-align: left;
-  color: #BABABA;
+  color: #999;
+  font-weight: lighter;
+  font-size: 17px;
 }
 
 .column-wrapper_text h4 {
   text-align: left;
-  color: #fff;
+  color: $base-text-color;
   font-size: 22px;
-  margin-bottom: 30px;
+  margin-bottom: 17px;
 }
 
 .image-collage-wrap {
@@ -601,7 +615,7 @@ blockquote p {
 
 .inline-facts .num {
   font-size: 36px;
-  color: #fff;
+  color: $base-text-color;
   font-weight: 700;
   padding-right: 10px;
 }
@@ -2434,10 +2448,12 @@ blockquote p {
   color: #999;
   width: 100%;
   text-transform: none;
+  font-size: 22px;
 }
 
 .contact-details ul li a {
-  color: #fff
+  color: #fff;
+  font-size: 17px;
 }
 
 .contact-details ul li a:hover {
@@ -2663,7 +2679,7 @@ blockquote p {
 .share-wrapper1 {
   position: fixed;
   top: 96px;
-  right: 56px;
+  right: 18px;
   width: 130px;
   height: 130px;
   z-index: 100;
@@ -3288,7 +3304,7 @@ blockquote p {
 .upload {
   position: fixed;
   top: 40px;
-  right: 195px;
+  right: 156px;
   z-index: 20;
   color: #fff;
   cursor: pointer;
@@ -3304,11 +3320,80 @@ blockquote p {
   overflow: hidden;
 }
 
+.bg-clock {
+  width: 100%;
+  font-family: 'Oswald', sans-serif;
+  -webkit-text-stroke-color: rgba(255, 255, 255, 0.15);
+  -webkit-text-stroke-width: 1px;
+  color: rgba(255, 255, 255, 0.01);
+  font-size: 87px;
+  font-weight: 800;
+  z-index: 3;
+  left: 0;
+  top: -8px;
+  right: 0;
+  position: fixed;
+
+  span {
+    display: inline-block;
+    width: 50%;
+  }
+
+  span:nth-child(1) {
+    position: relative;
+    left: 39px;
+  }
+
+  span:nth-child(2) {
+    position: relative;
+    right: 92px;
+  }
+}
+
+
+
+
 @media only screen and (max-width: 1064px) {
   .upload {
     top: 20px;
     right: 124px;
     width: 86px;
+  }
+
+  .bg-clock {
+    width: 100%;
+    font-family: 'Oswald', sans-serif;
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0.15);
+    -webkit-text-stroke-width: 1px;
+    color: rgba(255, 255, 255, 0.01);
+    font-size: 60px;
+    font-weight: 800;
+    z-index: 3;
+    left: 0;
+    top: -8px;
+    right: 0;
+    position: fixed;
+
+    span {
+      display: inline-block;
+      width: 50%;
+    }
+
+    span:nth-child(1) {
+      position: relative;
+      left: 39px;
+    }
+
+    span:nth-child(2) {
+      position: relative;
+      right: 140px;
+    }
+  }
+}
+
+@media only screen and (max-width: 855px) {
+  .bg-clock {
+    display: none;
   }
 }
 
@@ -3325,7 +3410,7 @@ blockquote p {
   }
 
   .el-upload {
-    border: 1px dashed #d9d9d9;
+    border: 1px dashed #555;
     border-radius: 6px;
     cursor: pointer;
     position: relative;
@@ -3363,6 +3448,7 @@ blockquote p {
       color: #fff;
 
       &:hover {
+        // color: var(--el-color-primary);
         color: var(--el-color-primary);
       }
     }
@@ -3420,5 +3506,27 @@ blockquote p {
         background: #333;
       }
     }
+  }
+}
+
+
+span.ajax {
+  font-size: 13px;
+}
+
+.nav-holder li {
+  margin: 0;
+  padding: 10px 30px;
+  border: 1px solid transparent;
+  transition: all ease .2s;
+
+  &:hover {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  &:active {
+    border: 1px solid rgba(255, 255, 255, 1);
+
   }
 }

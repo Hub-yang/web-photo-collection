@@ -8,6 +8,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     BaseBackTop: typeof import('./../components/baseBackTop.vue')['default']
+    BaseClock: typeof import('./../components/baseClock.vue')['default']
     BaseCursor: typeof import('./../components/baseCursor.vue')['default']
     BaseFooter: typeof import('./../components/baseFooter.vue')['default']
     BaseHeader: typeof import('./../components/baseHeader.vue')['default']
