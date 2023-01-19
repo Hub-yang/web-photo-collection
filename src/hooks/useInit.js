@@ -303,7 +303,6 @@ export const useInit = () => {
     })
 
     // 侧边鼠标滚动动画相关
-    // mouse move animation------------------
     $(window).on('scroll', function (a) {
       var a = $(document).height()
       var b = $(window).height()

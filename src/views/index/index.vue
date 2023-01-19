@@ -183,10 +183,10 @@ const submitForm = () => {
       if (res && res.code === 200) {
         ElMessage({ message: res.msg, duration: 3000, type: 'success' })
         // 刷新页面
-        // timer = setTimeout(() => {
-        //   getImgList()
-        //   document.location.reload()
-        // }, 2001)
+        timer = setTimeout(() => {
+          getImgList()
+          document.location.reload()
+        }, 2001)
         // 关闭弹窗
         visible.value = false
         // 重置表单
