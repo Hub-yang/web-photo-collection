@@ -135,7 +135,7 @@ onBeforeUnmount(() => {
   clearTimeout(timer)
 })
 
-// 图片列表数据
+// 图片列表数据（以包含空对象的数组初始化，避免渲染问题）
 const imgList = ref(new Array(100).fill({}))
 
 const visible = ref(false)
