@@ -22,7 +22,7 @@
   >
     <el-upload
       class="avatar-uploader"
-      action="#"
+      action="http://up-na0.qiniu.com"
       :show-file-list="false"
       :before-upload="handlerBeforeUpload"
       :http-request="handlerUpload"
@@ -64,21 +64,21 @@
         </div>
         <!-- 主界面列表 -->
         <div class="hero-showcase-wrap">
-          <div class="hero-showcase">
-            <div class="gallery-items sf_true">
-              <div class="gallery-items-container fl-wrap lightgallery">
-                <div v-for="(item, index) in imgList" :key="index" :class="['gallery-item hov_zoom', item.class]">
-                  <div class="hov_box">
-                    <img :src="item.url" alt="" />
-                    <a :href="item.url" class="box-media-zoom popup-image"><i class="fal fa-search"></i></a>
-                    <div class="overlay"></div>
-                    <div class="hov_box-title">
-                      <a href="javascript:;" class="ajax">{{ item.title }}</a>
-                      <div class="cat_item">{{ item.catName }}</div>
-                    </div>
+          <!-- <div class="hero-showcase"> -->
+          <div class="gallery-items sf_true">
+            <div class="gallery-items-container fl-wrap lightgallery">
+              <div v-for="(item, index) in imgList" :key="index" :class="['gallery-item hov_zoom', item.class]">
+                <div class="hov_box">
+                  <img :src="item.url" alt="" />
+                  <a :href="item.url" class="box-media-zoom popup-image"><i class="fal fa-search"></i></a>
+                  <div class="overlay"></div>
+                  <div class="hov_box-title">
+                    <a href="javascript:;" class="ajax">{{ item.title }}</a>
+                    <div class="cat_item">{{ item.catName }}</div>
                   </div>
                 </div>
               </div>
+              <!-- </div> -->
             </div>
           </div>
         </div>
@@ -92,10 +92,19 @@
   </div>
 </template>
 <script setup>
-import { uploadimg, submitimg, getImg } from '@/api/modules/index'
+import { uploadimg, submitimg, getImg, getToken } from '@/api/modules/index'
 import { getLoaderState, setLoaderState } from '@/utils/useRunLoader'
+import * as qiniu from 'qiniu-js'
+
+const qn_token = ref('')
 
 useInit()
+onMounted(() => {
+  getToken().then((res) => {
+    qn_token.value = res.data.token
+  })
+
+})
 // 控制加载动画只显示一次
 let timer = null
 // 获取图片列表
@@ -150,21 +159,42 @@ const form = reactive({
 const handlerUpload = (params) => {
   let param = new FormData()
   param.append('file', params.file)
+
+  // 上传七牛
+  const observer = {
+    next(res) {
+      console.log('res1=====', res)
+    },
+    error(err) {
+      console.log('err=====', err)
+    },
+    complete(res) {
+      console.log('res3=====', res)
+      form.imageUrl="http://mochenghualei.com.cn/test"
+    },
+  }
+  const config = {
+    useCdnDomain: true,
+    region: qiniu.region.na0,
+  }
+  
+  const observable = qiniu.upload(params.file, 'covers/test', qn_token.value, {}, config)
+  observable.subscribe(observer)
   // 调用上传接口
-  uploadimg(param)
-    .then((res) => {
-      if (res && res.code === 200) {
-        ElMessage({ message: res.msg, duration: 3000, type: 'success' })
-        form.imageUrl = res.imgurl
-        form.file = params.file
-      } else {
-        ElMessage({ message: res.msg, duration: 3000, type: 'error' })
-      }
-    })
-    .catch((err) => {
-      ElMessage.error(err)
-      throw new Error(`uploadFile()接口错误：${err}`)
-    })
+  // uploadimg(param)
+  //   .then((res) => {
+  //     if (res && res.code === 200) {
+  //       ElMessage({ message: res.msg, duration: 3000, type: 'success' })
+  //       form.imageUrl = res.imgurl
+  //       form.file = params.file
+  //     } else {
+  //       ElMessage({ message: res.msg, duration: 3000, type: 'error' })
+  //     }
+  //   })
+  //   .catch((err) => {
+  //     ElMessage.error(err)
+  //     throw new Error(`uploadFile()接口错误：${err}`)
+  //   })
 }
 
 const submitForm = () => {

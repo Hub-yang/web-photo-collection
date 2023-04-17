@@ -90,7 +90,6 @@ declare global {
   const resolveDirective: typeof import('vue')['resolveDirective']
   const resolveRef: typeof import('@vueuse/core')['resolveRef']
   const resolveUnref: typeof import('@vueuse/core')['resolveUnref']
-  const sayHello: typeof import('../utils/useHello')['sayHello']
   const setActivePinia: typeof import('pinia')['setActivePinia']
   const setLoaderState: typeof import('../utils/useRunLoader')['setLoaderState']
   const setMapStoreSuffix: typeof import('pinia')['setMapStoreSuffix']

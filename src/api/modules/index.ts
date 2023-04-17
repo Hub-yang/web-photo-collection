@@ -13,3 +13,8 @@ export const uploadimg = (data: object) => {
 export const submitimg = (data: object) => {
   return service.post('/submitimg', data)
 }
+
+// 获取凭证
+export const getToken=() => {
+  return service.get("/gettoken")
+}

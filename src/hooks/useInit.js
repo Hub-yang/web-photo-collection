@@ -151,25 +151,26 @@ export const useInit = () => {
     })
     var b = $('.gallery-item').length
     $('.all-album , .num-album').html(b)
-    var portfolio = $('.hero-showcase'),
-      wrapScreenHeight = portfolio.height(),
-      wrapHeight = portfolio.height(),
-      listHeight = portfolio.find('.gallery-items').height(),
-      wrapScreenwidht = portfolio.width(),
-      wrapwidth = portfolio.width(),
-      listwidth = portfolio.find('.gallery-items').width()
-    portfolio.on('mousemove', function (e) {
-      var dP = e.pageY / wrapHeight
-      var dP2 = e.pageX / wrapwidth
-      TweenMax.to(portfolio, 2.9, {
-        scrollTop: listHeight * dP - wrapScreenHeight / 2,
-        force3D: true,
-      })
-      TweenMax.to(portfolio, 2.9, {
-        scrollLeft: listwidth * dP2 - wrapScreenwidht / 2,
-        force3D: true,
-      })
-    })
+    var portfolio = $('.hero-showcase')
+    // 关闭鼠标滑动事件
+    //   wrapScreenHeight = portfolio.height(),
+    //   wrapHeight = portfolio.height(),
+    //   listHeight = portfolio.find('.gallery-items').height(),
+    //   wrapScreenwidht = portfolio.width(),
+    //   wrapwidth = portfolio.width(),
+    //   listwidth = portfolio.find('.gallery-items').width()
+    // portfolio.on('mousemove', function (e) {
+    //   var dP = e.pageY / wrapHeight
+    //   var dP2 = e.pageX / wrapwidth
+    //   TweenMax.to(portfolio, 2.9, {
+    //     scrollTop: listHeight * dP - wrapScreenHeight / 2,
+    //     force3D: true,
+    //   })
+    //   TweenMax.to(portfolio, 2.9, {
+    //     scrollLeft: listwidth * dP2 - wrapScreenwidht / 2,
+    //     force3D: true,
+    //   })
+    // })
   }
 
   // 首页相关逻辑封装

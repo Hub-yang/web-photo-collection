@@ -89,7 +89,6 @@
     "resolveDirective": true,
     "resolveRef": true,
     "resolveUnref": true,
-    "sayHello": true,
     "setActivePinia": true,
     "setLoaderState": true,
     "setMapStoreSuffix": true,
