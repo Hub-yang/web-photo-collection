@@ -3,8 +3,7 @@ import showCodeMessage from './code'
 import { ElMessage } from 'element-plus'
 import { formatJsonToUrlParams, instanceObject } from '@/utils/format'
 
-// const baseURL = import.meta.env.VITE_APP_BASE_API || '/api'
-const baseURL = 'http://localhost:3015/'
+const baseURL = import.meta.env.MODE === "development" ? "http://localhost:3015" : "http://82.157.148.19:81/api/"
 // 创建实例
 const axiosInstance: AxiosInstance = axios.create({
   baseURL,

@@ -95,15 +95,27 @@
 import { uploadimg, submitimg, getImg, getToken } from '@/api/modules/index'
 import { getLoaderState, setLoaderState } from '@/utils/useRunLoader'
 import * as qiniu from 'qiniu-js'
+import { imgList as imglist } from './config.ts'
 
 const qn_token = ref('')
 
 useInit()
+// 图片列表数据（以包含空对象的数组初始化，避免渲染问题）
+const imgList = ref(new Array(100).fill({}))
+onBeforeMount(() => {
+  // 请求图片列表
+  // getImgList()
+  // 获取加载动画标识
+  timer = setTimeout(() => {
+    setLoaderState(JSON.stringify(true))
+  }, 2000)
+})
 onMounted(() => {
-  getToken().then((res) => {
-    qn_token.value = res.data.token
-  })
+  imgList.value = imglist
 
+  // getToken().then((res) => {
+  //   qn_token.value = res.data.token
+  // })
 })
 // 控制加载动画只显示一次
 let timer = null
@@ -131,21 +143,12 @@ const getImgList = () => {
       throw new Error(`getImg()接口错误：${err}`)
     })
 }
-onBeforeMount(() => {
-  // 请求图片列表
-  getImgList()
-  // 获取加载动画标识
-  timer = setTimeout(() => {
-    setLoaderState(JSON.stringify(true))
-  }, 2000)
-})
 
 onBeforeUnmount(() => {
   clearTimeout(timer)
 })
 
-// 图片列表数据（以包含空对象的数组初始化，避免渲染问题）
-const imgList = ref(new Array(100).fill({}))
+
 
 const visible = ref(false)
 
@@ -170,14 +173,14 @@ const handlerUpload = (params) => {
     },
     complete(res) {
       console.log('res3=====', res)
-      form.imageUrl="http://mochenghualei.com.cn/test"
+      form.imageUrl = 'http://mochenghualei.com.cn/test'
     },
   }
   const config = {
     useCdnDomain: true,
     region: qiniu.region.na0,
   }
-  
+
   const observable = qiniu.upload(params.file, 'covers/test', qn_token.value, {}, config)
   observable.subscribe(observer)
   // 调用上传接口

@@ -50,5 +50,11 @@
     "*.{ts,js,vue}": [
       "eslint"
     ]
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true,
+      "jquery": true
+    }
   }
 }

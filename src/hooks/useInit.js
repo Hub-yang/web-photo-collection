@@ -1,4 +1,4 @@
-import { getLoaderState, setLoaderState } from '@/utils/useRunLoader'
+import { getLoaderState } from '@/utils/useRunLoader'
 export const useInit = () => {
   const route = useRoute()
   const isHomePage = route.meta.isHomePage

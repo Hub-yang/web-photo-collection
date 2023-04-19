@@ -2,7 +2,7 @@ let express = require('express')
 let router = express.Router()
 const db = require('./db')
 let multer = require('multer')
-let { nanoid } = require('nanoid')
+const crypto = require("crypto")
 
 // 获取图片
 router.get('/getimglist', (req, res) => {
@@ -36,7 +36,7 @@ const storage = multer.diskStorage({
   filename: function (req, file, cb) {
     // 正则匹配后缀名
     const type = file.originalname.replace(/.+\./, '.')
-    cb(null, file.fieldname + nanoid() + type)
+    cb(null, file.fieldname + crypto.randomUUID() + type)
   },
 })
 

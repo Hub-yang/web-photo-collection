@@ -1,7 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const db = require('./db')
-const { nanoid } = require('nanoid')
+// const db = require('./db')
 const qiniu=require("qiniu")
 
 // 生成鉴权对象
@@ -26,16 +25,6 @@ router.get('/gettoken', (req, res) => {
       token:uploadToken
     }
   })
-  // let sql = 'select * from imgs'
-  // db.query(sql, (err, data) => {
-  //   if (err) {
-  //     res.send('error' + err.message)
-  //   }
-  //   res.send({
-  //     code: '200',
-  //     data,
-  //   })
-  // })
 })
 
 
