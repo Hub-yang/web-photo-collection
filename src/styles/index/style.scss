@@ -3533,3 +3533,12 @@ span.ajax {
 
   }
 }
+
+// 自增
+.share + .share-wrapper1{
+  z-index: 0;
+}
+
+.share.uncl-share + .share-wrapper1{
+  z-index: 100;
+}
