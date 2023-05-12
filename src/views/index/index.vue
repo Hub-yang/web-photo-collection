@@ -12,21 +12,10 @@
     <span>上 传</span>
   </div>
   <!-- 上传对话框 -->
-  <el-dialog
-    class="upload_dialog"
-    v-model="visible"
-    title="上 传"
-    :append-to-body="true"
-    :close-on-click-modal="false"
-    width="40%"
-  >
-    <el-upload
-      class="avatar-uploader"
-      action="http://up-na0.qiniu.com"
-      :show-file-list="false"
-      :before-upload="handlerBeforeUpload"
-      :http-request="handlerUpload"
-    >
+  <el-dialog class="upload_dialog" v-model="visible" title="上 传" :append-to-body="true" :close-on-click-modal="false"
+    width="40%">
+    <el-upload class="avatar-uploader" action="http://up-na0.qiniu.com" :show-file-list="false"
+      :before-upload="handlerBeforeUpload" :http-request:any="handlerUpload">
       <img v-if="form.imageUrl" :src="form.imageUrl" class="avatar" />
       <el-icon class="el-icon" v-else>+</el-icon>
     </el-upload>
@@ -91,24 +80,20 @@
     <!-- 筛选结束 -->
   </div>
 </template>
-<script setup>
+<script setup lang="ts">
 import { uploadimg, submitimg, getImg, getToken } from '@/api/modules/index'
 import { getLoaderState, setLoaderState } from '@/utils/useRunLoader'
 import * as qiniu from 'qiniu-js'
-import { imgList as imglist } from './config.ts'
+import { imgList as imglist, Img } from './config'
 
 const qn_token = ref('')
 
-useInit()
+useInit(imglist)
 // 图片列表数据（以包含空对象的数组初始化，避免渲染问题）
 const imgList = ref(new Array(100).fill({}))
 onBeforeMount(() => {
   // 请求图片列表
   // getImgList()
-  // 获取加载动画标识
-  timer = setTimeout(() => {
-    setLoaderState(JSON.stringify(true))
-  }, 2000)
 })
 onMounted(() => {
   imgList.value = imglist
@@ -118,14 +103,14 @@ onMounted(() => {
   // })
 })
 // 控制加载动画只显示一次
-let timer = null
+let timer: any = null
 // 获取图片列表
 const getImgList = () => {
   getImg()
     .then((res) => {
       if (res && res.code === '200') {
-        let resList = []
-        res.data.forEach((item) => {
+        let resList: Img[] = []
+        res.data.forEach((item: any) => {
           let newData = {
             class: item.class,
             // 注意路径
@@ -144,11 +129,6 @@ const getImgList = () => {
     })
 }
 
-onBeforeUnmount(() => {
-  clearTimeout(timer)
-})
-
-
 
 const visible = ref(false)
 
@@ -159,19 +139,19 @@ const form = reactive({
   file: null,
 })
 
-const handlerUpload = (params) => {
+const handlerUpload = (params: any) => {
   let param = new FormData()
   param.append('file', params.file)
 
   // 上传七牛
   const observer = {
-    next(res) {
+    next(res: any) {
       console.log('res1=====', res)
     },
-    error(err) {
+    error(err: any) {
       console.log('err=====', err)
     },
-    complete(res) {
+    complete(res: any) {
       console.log('res3=====', res)
       form.imageUrl = 'http://mochenghualei.com.cn/test'
     },
@@ -206,7 +186,7 @@ const submitForm = () => {
     return false
   }
   // 参数
-  let param = new FormData()
+  let param: any = new FormData()
   param.append('file', form.file)
   param.append('title', form.title)
   param.append('class', form.class)
@@ -238,7 +218,7 @@ const submitForm = () => {
 }
 
 // 图片格式校验
-const handlerBeforeUpload = (file) => {
+const handlerBeforeUpload = (file: any) => {
   // 判断上传文件类型与大小，返回boolean
   const isJPGOrPNG = file.type === ('image/jpeg' || 'image/png' || 'image/jpg')
   if (!isJPGOrPNG) {

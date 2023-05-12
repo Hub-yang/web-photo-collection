@@ -1,4 +1,4 @@
-type Img = {
+export interface Img {
   url: string,
   class: string,
   title: string,

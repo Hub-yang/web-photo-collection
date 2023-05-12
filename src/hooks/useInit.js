@@ -1,5 +1,5 @@
-import { getLoaderState } from '@/utils/useRunLoader'
-export const useInit = () => {
+import { getLoaderState, setLoaderState } from '@/utils/useRunLoader'
+export const useInit = (imgList) => {
   const route = useRoute()
   const isHomePage = route.meta.isHomePage
   const isFirstLoad = !getLoaderState()
@@ -472,7 +472,7 @@ export const useInit = () => {
     function firstLoad() {
       TweenMax.to('.ml-mask', 1.7, {
         xPercent: 100,
-        repeat: 0,
+        repeat: 1,
         yoyo: false,
         repeatDelay: 0.5,
         ease: Linear.easeNone,
@@ -487,7 +487,44 @@ export const useInit = () => {
     initHomePage()
   }
 
+
+  // 根据资源加载状态显隐加载动画
+  function getImgLoadEd() {
+    const promises = imgList.map((node) => {
+      return new Promise((resolve, reject) => {
+        let loadImg = new Image()
+        loadImg.src = node.url
+        loadImg.onload = () => {
+          resolve(loadImg.src);
+        }
+      })
+    })
+
+
+    // 利用Promise.all监听所有图片加载完成
+    Promise.all(promises).then(results => {
+      if (results && results.length > 0) {
+        setTimeout(() => setLoaderState(JSON.stringify(true)), 500)
+        clearInterval(assetTimer)
+        assetTimer = null
+      }
+
+    }).catch(e => {
+      assetsIsReady.value = false
+      throw new Error("network error")
+    })
+  }
+
+  let assetTimer
   onMounted(() => {
+
+    if (isHomePage && isFirstLoad) {
+      console.log(88)
+
+      assetTimer = setInterval(() => {
+        getImgLoadEd()
+      }, 500)
+    }
     initMocheng()
     window.addEventListener('resize', () => {
       nc()
